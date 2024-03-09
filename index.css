@@ -1,0 +1,257 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 1.5em;
+    font-family: "poppins";
+    
+}
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.hero-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(/images/red\ shoes.avif);
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: introLoad 2s forwards;
+}
+.logo{
+    color: white;
+    font-weight: bold;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+
+    svg{
+        width: 3em;
+        cursor: pointer;
+        margin-top: -.6em;
+    }
+}
+nav{
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 50%;
+    z-index: 2;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    background-color: white;
+    
+    
+
+    ul{
+        list-style-type: none;
+        margin-top: 8em;
+
+        a{
+            color:black ;
+            padding: .75em 2em;
+            display: block;
+            &:hover{
+                background-color: rgba(128, 128, 128, 0.795);
+            }
+        }
+    }
+    .fa-times-circle{
+        float: right;
+        margin: 2em;
+        cursor: pointer;
+        
+    }
+
+}
+
+.hero{
+    color: white;
+    height: 90vh;
+
+    svg{
+        stroke: white;
+        animation: moveArrow 1s alternate-reverse infinite;
+        
+        path{
+            fill: white;
+        }
+        margin-top: 70px;
+
+    }
+}
+h1{
+    font-size: 3rem;
+    margin-top: 2em;
+    line-height: 3.3rem;
+    margin-bottom: 20px;
+}
+.subhead{
+    font-size: 1.4rem;
+}
+
+.info{
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: 11em;
+    }
+}
+.tittle{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.desc{
+    line-height: 1.5rem;
+}
+
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+
+@media only screen and (min-width:680px){
+    body{
+        margin: 1.5em 5em;
+        font-family: "poppins";
+        
+    }
+
+}
+@media only screen and (min-width:920px){
+    .menu{
+        display: none;
+    }
+
+    nav{
+        transform: translateX(0);
+        position: unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+
+        .fa-times{
+            display: none;
+        }
+
+        ul{
+            display: flex;
+            margin: 0;
+
+            a{
+                color: white;
+                padding: .5em 1.5em;
+                font-size: .9rem;
+
+                &:hover{
+                    background: none;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .hero-img{
+        left: unset;
+        right: 0;
+        width: 50%;
+        height: 35em;
+        
+    }
+
+    .logo{
+        color: black;
+    }
+    span{
+        color: red;
+    }
+    section.hero{
+        color: black;
+        height: auto;
+        width: 40%;
+        margin-bottom: 8em;
+
+
+        svg.arrow{
+            stroke: black;
+            position: unset;
+            
+
+            path{
+                fill: black;
+            }
+            
+            
+        }
+    }
+    .feature{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        gap: 3em;
+        margin-bottom: 8em;
+        margin-top: 20px;
+
+        img{
+            width: 25em;
+            height: 20em;
+        }
+        .content {
+            text-align: right;
+            width: 25em;
+
+        }
+    }
+    .feature.left{
+        grid-template-areas: 
+        "left right";
+
+        img{
+            grid-area: left;
+        }
+        .content{
+            text-align: left;
+            justify-self: left;
+            width: 25em;
+        }
+    }
+
+}
+
+ @media only screen and (min-width:1200px){
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .feature{
+        gap: 0;
+    }
+}  
+
+@keyframes introLoad{
+    from {
+        clip-path:polygon(0 0, 100% 0,100% 0, 0 0);
+    }
+    to{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100% );
+    }
+}
+ @keyframes moveArrow{
+    from{
+        transform: translateY(-30px);
+    }
+    to{
+        transform: translateY(0);
+    }
+} 
